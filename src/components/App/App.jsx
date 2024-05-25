@@ -23,11 +23,11 @@ import Loader from 'components//Loader/Loader';
 import SharedLayout from '../../layouts/SharedLayout';
 import NotFoundPage from '../../pages/NotFoundPage';
 
-const HomePage = lazy(() => import('pages/HomePage'));
-const CatalogPage = lazy(() => import('pages/CatalogPage'));
-const FavoritesPage = lazy(() => import('pages/FavoritesPage'));
-
 const App = () => {
+  const HomePage = lazy(() => import('pages/HomePage'));
+  const CatalogPage = lazy(() => import('pages/CatalogPage'));
+  const FavoritesPage = lazy(() => import('pages/FavoritesPage'));
+
   return (
     <Suspense fallback={<Loader isLoading={true} />}>
       <Routes>

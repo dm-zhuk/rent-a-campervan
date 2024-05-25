@@ -9,7 +9,7 @@ import {
   H2,
   CategoryText,
   Button,
-} from 'pages';
+} from 'components/Home';
 import camperFreepik from 'img/camperFreepik.webp';
 
 const HomePage = () => {
@@ -20,7 +20,7 @@ const HomePage = () => {
       <ImgThumb src={camperFreepik} alt="Designed by Freepik" />
       <Features>
         <FeatureItem>
-          <CategoryText>✰ Unlimited miles</CategoryText>
+          <CategoryText>✔︎ Unlimited miles</CategoryText>
         </FeatureItem>
         <FeatureItem>
           <CategoryText>✔︎ Free second driver</CategoryText>
@@ -39,7 +39,7 @@ const HomePage = () => {
         type="button"
         text="Book Now"
         onClick={() => {
-          navigate('/catalog');
+          navigate('catalog');
         }}
       />
       <H2>
