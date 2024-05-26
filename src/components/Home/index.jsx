@@ -5,11 +5,11 @@ export const HomeContainer = styled.section`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 12px;
 `;
 
 export const ImgThumb = styled.img`
-  width: 100%;
+  width: 90%;
   height: auto;
   flex-shrink: 0;
   object-fit: cover;
@@ -17,16 +17,26 @@ export const ImgThumb = styled.img`
   background: lightgray -57px -4.651px / 195.679% 103.001% no-repeat;
 `;
 
+export const HomeAdvert = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  max-width: 1200px;
+  text-align: center;
+  margin-bottom: 24px;
+`;
+
 export const Features = styled.ul`
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 36px;
 `;
 
 export const FeatureItem = styled.li`
-  display: inline-flex;
+  font-weight: 500;
+  line-height: 1.25em;
 `;
-
 export const Button = styled.button`
   display: flex;
   padding: 16px 40px;
@@ -49,22 +59,14 @@ export const Button = styled.button`
 `;
 
 export const H1 = styled.h1`
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
+  margin-top: 80px;
+  font-size: 36px;
   line-height: 1.25em;
 `;
 
-export const H2 = styled.h2`
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.2em;
-  margin: 0 10px;
-`;
-
-export const CategoryText = styled.p`
-  font-size: 16px;
-  text-align: center;
+export const H2 = styled.h1`
+  max-width: 960px;
+  font-size: 24px;
   font-weight: 500;
   line-height: 1.25em;
   margin: 0;

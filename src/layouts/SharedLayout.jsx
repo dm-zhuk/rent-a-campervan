@@ -1,78 +1,85 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import {
-  SharedHeader,
-  HeaderContainer,
-  HeaderNav,
-  HeaderLogo,
-  HeaderLogoAccent,
-  HeaderNavList,
-  HeaderNavItem,
-  HeaderContacts,
-  HeaderContactsList,
-  HeaderNavItemLink,
-  HeaderContactsLink,
-  SharedPageCtnr,
-} from './index';
+import styles from './index.module.css';
+import favicon from '../img/favicon.svg';
 
 const SharedLayout = () => {
   return (
     <>
-      <SharedHeader>
-        <HeaderContainer>
-          <HeaderNav>
-            <img
-              src="../img//favicon.png"
-              alt="Logo"
-              width="30"
-              height="24"
-            ></img>
-            <HeaderLogo to="/">
-              RENT-A-<HeaderLogoAccent>CAMPER</HeaderLogoAccent>
-            </HeaderLogo>
+      <div className={styles.sharedHeader}>
+        <div className={styles.headerContainer}>
+          <div className={styles.headerNav}>
+            <img src={favicon} alt="Logo" width="36" height="auto" />
+            <NavLink to="/" className={styles.headerLogo}>
+              RENT-A-<span className={styles.headerLogoAccent}>CAMPER</span>
+            </NavLink>
 
-            <HeaderNavList>
-              <HeaderNavItem>
-                <NavLink to="/" className={HeaderNavItemLink}>
+            <ul className={styles.headerNavList}>
+              <li className={styles.headerNavItem}>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.headerNavItemLink} ${styles.active}`
+                      : styles.headerNavItemLink
+                  }
+                >
                   Home
                 </NavLink>
-              </HeaderNavItem>
-              <HeaderNavItem>
-                <NavLink to="/catalog" className={HeaderNavItemLink}>
+              </li>
+              <li className={styles.headerNavItem}>
+                <NavLink
+                  to="/catalog"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.headerNavItemLink} ${styles.active}`
+                      : styles.headerNavItemLink
+                  }
+                >
                   Catalog
                 </NavLink>
-              </HeaderNavItem>
-              <HeaderNavItem>
-                <NavLink to="/favorites" className={HeaderNavItemLink}>
+              </li>
+              <li className={styles.headerNavItem}>
+                <NavLink
+                  to="/favorites"
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.headerNavItemLink} ${styles.active}`
+                      : styles.headerNavItemLink
+                  }
+                >
                   Favorites
                 </NavLink>
-              </HeaderNavItem>
-            </HeaderNavList>
-          </HeaderNav>
+              </li>
+            </ul>
+          </div>
 
-          <HeaderContacts>
-            <HeaderContactsList>
+          <div className={styles.headerContacts}>
+            <ul className={styles.headerContactsList}>
               <li>
                 <a
-                  className={HeaderContactsLink}
                   href="mailto:info@camperrental.com"
+                  className={styles.headerContactsLink}
                 >
                   info@camperrental.com
                 </a>
               </li>
               <li>
-                <a className={HeaderContactsLink} href="tel:+380631234567">
+                <a
+                  href="tel:+380631234567"
+                  className={styles.headerContactsLink}
+                >
                   +380 (63) 123-45-67
                 </a>
               </li>
-            </HeaderContactsList>
-          </HeaderContacts>
-        </HeaderContainer>
-      </SharedHeader>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-      <SharedPageCtnr>
+      <div className={styles.sharedPageCtnr}>
         <Outlet />
-      </SharedPageCtnr>
+      </div>
     </>
   );
 };

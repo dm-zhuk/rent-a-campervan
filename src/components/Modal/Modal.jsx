@@ -22,7 +22,7 @@ import {
   ImgsContainer,
   ModalContentBox,
   AdvertFullText,
-  FeatureReviewVerBox,
+  FeatureReviewVertBox,
   FeatureReviewTitles,
   FeatureReviewTitle,
   FeatureSubtitle,
@@ -34,7 +34,7 @@ import {
   TxtField,
   VehicleDetailItem,
   VehicleItemTxt,
-  FeatureReviewHorBox,
+  FeatureReviewHorizBox,
   FeaturesUnderlineBox,
   BookingBox,
   BookingHeader,
@@ -98,7 +98,7 @@ const CardModalData = modal => {
               </ImgsContainer>
             )}
           </>
-          <FeatureReviewVerBox>
+          <FeatureReviewVertBox>
             <AdvertFullText>{modal.description}</AdvertFullText>
             <FeaturesUnderlineBox>
               <FeatureReviewTitles>
@@ -107,7 +107,7 @@ const CardModalData = modal => {
               </FeatureReviewTitles>
               <VectorLine1 src={vector_line1} alt="line" />
             </FeaturesUnderlineBox>
-            <FeatureReviewHorBox>
+            <FeatureReviewHorizBox>
               <FeatureTagsBox>
                 <CategoryButton>
                   <IconThumb20 src={adults} alt="adults capacity" />
@@ -248,8 +248,8 @@ const CardModalData = modal => {
                 <Button type="button" text="Send"></Button>
                 {/*  onClick={handleSubmit} */}
               </BookingBox>
-            </FeatureReviewHorBox>
-          </FeatureReviewVerBox>
+            </FeatureReviewHorizBox>
+          </FeatureReviewVertBox>
         </ModalContentBox>
       </ModalFeatures>
       <TxtFieldBox></TxtFieldBox>

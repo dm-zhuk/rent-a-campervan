@@ -20,7 +20,7 @@ import React from 'react';
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Loader from 'components//Loader/Loader';
-import SharedLayout from '../../layouts/SharedLayout';
+import SharedLayout from '../../layouts//SharedLayout';
 import NotFoundPage from '../../pages/NotFoundPage';
 
 const App = () => {

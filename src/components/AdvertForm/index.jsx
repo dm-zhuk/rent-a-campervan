@@ -284,7 +284,7 @@ export const AdvertFullText = styled.p`
   margin: 0;
 `;
 
-export const FeatureReviewVerBox = styled.div`
+export const FeatureReviewVertBox = styled.div`
   display: flex;
   height: 740px;
   flex-direction: column;
@@ -294,7 +294,7 @@ export const FeatureReviewVerBox = styled.div`
   align-self: stretch;
 `;
 
-export const FeatureReviewHorBox = styled.div`
+export const FeatureReviewHorizBox = styled.div`
   display: flex;
   align-items: flex-start;
   align-self: stretch;
