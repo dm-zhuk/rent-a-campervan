@@ -1,40 +1,20 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchAll } from '../redux/advert/operations';
-import Loader from 'components/Loader/Loader';
+import styles from 'components/App/index.module.scss';
+import AdvertForm from 'components/AdvertForm/AdvertForm';
+import CitySearch from 'components/CitySearch/CitySearch';
 
 const CatalogPage = () => {
-  const dispatch = useDispatch();
-  const { items, isLoading, error } = useSelector(state => state.advert);
-
-  useEffect(() => {
-    dispatch(fetchAll());
-  }, [dispatch]);
-
-  if (isLoading) {
-    return <Loader isLoading={true} />;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
   return (
-    <div>
-      {items.map(item => (
-        <div key={item._id}>
-          <a
-            href={`http://ww38.item.name/${item.name}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {item.name}
-          </a>
-        </div>
-      ))}
+    <div className={styles.mainContainer}>
+      <section className={styles.leftSection}>
+        <CitySearch />
+      </section>
+      <section className={styles.RightSection}>
+        <AdvertForm />
+      </section>
     </div>
   );
 };
+export default CatalogPage;
 
 /* import React, { useEffect, useState, memo } from 'react';
 import Card from '../helpers/Card';
@@ -50,7 +30,7 @@ import {
   CardsContainer,
   CardContainer,
   LoadMore,
-} from 'components/AdvertForm/index';
+} from 'components/AdvertForm/index.module.scss';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -95,5 +75,3 @@ const CatalogPage = () => {
   );
 };
  */
-
-export default CatalogPage;

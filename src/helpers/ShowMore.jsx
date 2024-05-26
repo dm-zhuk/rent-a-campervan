@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import CardModalData from '../Modal/Modal';
-import { Button } from '../components/AdvertForm/index';
+import styles from '../components/AdvertForm/index.module.scss';
 
 const ShowMoreModal = ({ advItem }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,12 @@ const ShowMoreModal = ({ advItem }) => {
 
   return (
     <>
-      <Button type="button" text="Show more" onClick={handleOpen}></Button>
+      <button
+        className={styles.button}
+        type="button"
+        text="Show more"
+        onClick={handleOpen}
+      ></button>
       {isOpen && (
         <button onClick={handleClose}>{advItem.name}</button>
         // {CardModalData(data)}

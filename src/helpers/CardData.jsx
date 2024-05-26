@@ -1,24 +1,6 @@
 import ShowMoreModal from './ShowMore';
 
-import {
-  CardContent,
-  CardTitleHolder,
-  CardTitle,
-  H1,
-  PriceFavoriteWrapper,
-  Favorite,
-  ReviewLocationWrapper,
-  IconTextWrapper,
-  IconThumb16,
-  IconThumb20,
-  ReviewRate,
-  CardAdvert,
-  SegmentedPicker,
-  BodyText,
-  CategoryText,
-  CategoryButton,
-  Button,
-} from '../components/AdvertForm/index';
+import styles from '../components/AdvertForm/index.module.scss';
 
 import star from 'img/star.svg';
 import map_pin from 'img/map_pin.svg';
@@ -31,57 +13,70 @@ import ac from 'img/ac.svg';
 
 const CardData = advItem => {
   return (
-    <CardContent>
-      <CardTitleHolder>
-        <CardTitle>
-          <H1>{advItem.name}</H1>
-          <PriceFavoriteWrapper>
-            <H1>€{advItem.price},00</H1>
-            <Favorite />
-          </PriceFavoriteWrapper>
-        </CardTitle>
-        <ReviewLocationWrapper>
-          <IconTextWrapper>
-            <IconThumb16 src={star} alt="review star" />
-            <ReviewRate>
+    <div className={styles.cardContent}>
+      <div className={styles.cardTitleHolder}>
+        <div className={styles.cardTitle}>
+          <h1 className={styles.h1}>{advItem.name}</h1>
+          <div className={styles.priceFavoriteWrapper}>
+            <h1 className={styles.h1}>€{advItem.price},00</h1>
+            <button type="button" className={styles.favorite} />
+          </div>
+        </div>
+        <div className={styles.reviewLocationWrapper}>
+          <div className={styles.iconTextWrapper}>
+            <svg className={styles.iconThumb16} src={star} alt="review star" />
+            <p className={styles.reviewRate}>
               {advItem.rating} ({advItem.reviews.length} Reviews)
-            </ReviewRate>
-          </IconTextWrapper>
-          <IconTextWrapper>
-            <IconThumb16 src={map_pin} alt="map pin" />
-            <BodyText>{advItem.location}</BodyText>
-          </IconTextWrapper>
-        </ReviewLocationWrapper>
-      </CardTitleHolder>
-      <CardAdvert>{advItem.description}</CardAdvert>
-      <SegmentedPicker>
-        <CategoryButton>
-          <IconThumb20 src={adults} alt="adults capacity" />
-          <CategoryText>{advItem.adults} adults</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={automatic} alt="transmission" />
-          <CategoryText>{advItem.transmission}</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={petrol} alt="engine" />
-          <CategoryText>{advItem.engine}</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={kitchen} alt="kitchen" />
-          <CategoryText>{advItem.details.kitchen} Kitchen</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={beds} alt="beds qty" />
-          <CategoryText>{advItem.details.beds} beds</CategoryText>
-        </CategoryButton>
-        <CategoryButton>
-          <IconThumb20 src={ac} alt="AC" />
-          <CategoryText>{advItem.details.airConditioner} AC</CategoryText>
-        </CategoryButton>
-      </SegmentedPicker>
-      <Button type="button" text="Show more" onClick={ShowMoreModal}></Button>
-    </CardContent>
+            </p>
+          </div>
+          <div className={styles.iconTextWrapper}>
+            <svg src={map_pin} alt="pin" />
+            <p className={styles.bodyText}>{advItem.location}</p>
+          </div>
+        </div>
+      </div>
+      <p className={styles.cardAdvert}>{advItem.description}</p>
+      <div className={styles.segmentedPicker}>
+        <button type="button" className={styles.categoryButton}>
+          <svg className={styles.iconThumb20} src={adults} alt="capacity" />
+          <p className={styles.categoryText}>{advItem.adults} adults</p>
+        </button>
+        <button type="button" className={styles.categoryButton}>
+          <svg
+            className={styles.iconThumb20}
+            src={automatic}
+            alt="transmission"
+          />
+          <p className={styles.categoryText}>{advItem.transmission}</p>
+        </button>
+        <button type="button" className={styles.categoryButton}>
+          <svg className={styles.iconThumb20} src={petrol} alt="engine" />
+          <p className={styles.categoryText}>{advItem.engine}</p>
+        </button>
+        <button type="button" className={styles.categoryButton}>
+          <svg className={styles.iconThumb20} src={kitchen} alt="kitchen" />
+          <p className={styles.categoryText}>
+            {advItem.details.kitchen} Kitchen
+          </p>
+        </button>
+        <button type="button" className={styles.categoryButton}>
+          <svg className={styles.iconThumb20} src={beds} alt="beds qty" />
+          <p className={styles.categoryText}>{advItem.details.beds} beds</p>
+        </button>
+        <button type="button" className={styles.categoryButton}>
+          <svg className={styles.iconThumb20} src={ac} alt="AC" />
+          <p className={styles.categoryText}>
+            {advItem.details.airConditioner} AC
+          </p>
+        </button>
+      </div>
+      <button
+        className={styles.button}
+        type="button"
+        text="Show more"
+        onClick={ShowMoreModal}
+      ></button>
+    </div>
   );
 };
 

@@ -9,7 +9,7 @@ import {
   ReviewerNameRate,
   ReviewerName,
   ReviewerRate,
-} from '../AdvertForm/index';
+} from '../AdvertForm/index.module.scss';
 
 import star from 'img/star.svg';
 

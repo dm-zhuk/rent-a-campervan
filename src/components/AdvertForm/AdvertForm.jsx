@@ -9,7 +9,7 @@ import {
   selectError,
 } from '../../redux/advert/selectors';
 import Loader from 'components/Loader/Loader';
-import { CardsContainer, CardContainer, LoadMore } from './index';
+import styles from './index.module.scss';
 
 const AdvertForm = () => {
   const dispatch = useDispatch();
@@ -27,7 +27,9 @@ const AdvertForm = () => {
     setPage(page => page + 1);
   };
 
-  const MemoizedCardContainer = memo(CardContainer);
+  const MemoizedCardContainer = memo(
+    <div className={styles.cardContainer}></div>
+  );
 
   const startIndex = (page - 1) * perPage;
   const endIndex = startIndex + perPage;
@@ -39,7 +41,7 @@ const AdvertForm = () => {
     <>
       {isLoading && <Loader />}
       {error && <b>Error: {error}</b>}
-      <CardsContainer>
+      <section className={styles.cardsContainer}>
         {renderedCards &&
           renderedCards.map(card => (
             <MemoizedCardContainer key={card._id}>
@@ -47,9 +49,15 @@ const AdvertForm = () => {
             </MemoizedCardContainer>
           ))}
         {Object.values(items).length > endIndex && (
-          <LoadMore onClick={handleLoadMore}>Load more</LoadMore>
+          <button
+            type="button"
+            className={styles.loadMore}
+            onClick={handleLoadMore}
+          >
+            Load more
+          </button>
         )}
-      </CardsContainer>
+      </section>
     </>
   );
 };

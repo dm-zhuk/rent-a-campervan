@@ -3,7 +3,7 @@ import ModalWindow from './ModalWindow';
 import CardData from './CardData';
 import CardModalData from 'components/Modal/Modal';
 
-import { CardFrame, ImgThumb } from 'components/AdvertForm/index';
+import styles from 'components/AdvertForm/index.module.scss';
 
 const Card = ({ card }) => {
   const [showModal, setShowModal] = useState(false);
@@ -18,12 +18,12 @@ const Card = ({ card }) => {
 
   return (
     <>
-      <CardFrame onClick={handleCardClick}>
+      <div className={styles.cardFrame} onClick={handleCardClick}>
         {card.gallery && card.gallery.length > 0 && (
-          <ImgThumb src={card.gallery[0]} alt="van photo" />
+          <img className={styles.imgThumb} src={card.gallery[0]} alt="van" />
         )}
         {CardData(card)}
-      </CardFrame>
+      </div>
       <ModalWindow isOpen={showModal} onClose={handleModalClose}>
         <CardModalData modal={card} onClose={handleModalClose} />
       </ModalWindow>
