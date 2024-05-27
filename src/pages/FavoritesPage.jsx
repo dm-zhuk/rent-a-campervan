@@ -1,6 +1,8 @@
-/* import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectFavorites } from '../redux/advert/selectors';
+import AdvertFilter from 'components/AdvertFilter/AdvertFilter';
+import CardData from '../helpers/CardData';
 
 const FavoritesPage = () => {
   const favorites = useSelector(selectFavorites);
@@ -8,14 +10,13 @@ const FavoritesPage = () => {
 
   return (
     <>
-      <CardFilters
+      <AdvertFilter
         adverts={favorites}
         setFilteredAdverts={setFilteredAdverts}
       />
-      <CardsList data={filteredAdverts} />
+      <CardData data={filteredAdverts} />
     </>
   );
 };
 
 export default FavoritesPage;
- */

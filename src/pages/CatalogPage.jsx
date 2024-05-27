@@ -1,12 +1,12 @@
 import styles from 'components/App/index.module.scss';
 import AdvertForm from 'components/AdvertForm/AdvertForm';
-import CitySearch from 'components/CitySearch/CitySearch';
+import AdvertFilter from 'components/AdvertFilter/AdvertFilter';
 
 const CatalogPage = () => {
   return (
     <div className={styles.mainContainer}>
       <section className={styles.leftSection}>
-        <CitySearch />
+        <AdvertFilter />
       </section>
       <section className={styles.RightSection}>
         <AdvertForm />

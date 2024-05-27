@@ -5,6 +5,7 @@ export const HomeContainer = styled.section`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 72px;
   gap: 12px;
 `;
 
@@ -59,15 +60,16 @@ export const Button = styled.button`
 `;
 
 export const H1 = styled.h1`
-  margin-top: 80px;
-  font-size: 36px;
+  font-size: 32px;
   line-height: 1.25em;
+  text-align: center;
 `;
 
-export const H2 = styled.h1`
+export const H2 = styled.h2`
   max-width: 960px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.25em;
+  text-align: center;
   margin: 0;
 `;

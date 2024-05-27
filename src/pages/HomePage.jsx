@@ -28,7 +28,6 @@ const HomePage = () => {
         </Features>
         <Button
           type="button"
-          text="Book Now"
           onClick={() => {
             navigate('catalog');
           }}

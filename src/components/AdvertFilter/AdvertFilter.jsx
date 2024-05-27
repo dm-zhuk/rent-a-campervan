@@ -29,7 +29,7 @@ import van from 'img/van.svg';
 import van_fully_intg from 'img/van_fully_intg.svg';
 import van_alcove from 'img/van_alcove.svg';
 
-const CitySearch = () => {
+const AdvertFilter = () => {
   const [city, setCity] = useState('');
 
   const handleCityChange = event => {
@@ -136,4 +136,4 @@ const CitySearch = () => {
   );
 };
 
-export default CitySearch;
+export default AdvertFilter;

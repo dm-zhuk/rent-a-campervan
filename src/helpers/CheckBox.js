@@ -3,7 +3,7 @@ import {
   FiltersContainer,
   FiltersTypeInput,
   CheckRadioLabel,
-} from '../components/CitySearch/index';
+} from '../components/AdvertFilter/index';
 
 const CheckBox = ({ name, svg, label }) => {
   return (
