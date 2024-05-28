@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkrent_a_campervan_app=self.webpackChunkrent_a_campervan_app||[]).push([[328],{5697:function(e,n,a){a.r(n);var s=a(9131),c=a(1975),t=a(2358),i=a(3329);n.default=function(){return(0,i.jsxs)("div",{className:s.Z.mainContainer,children:[(0,i.jsx)("section",{className:s.Z.leftSection,children:(0,i.jsx)(t.Z,{})}),(0,i.jsx)("section",{className:s.Z.rightSection,children:(0,i.jsx)(c.Z,{})})]})}}}]);
+//# sourceMappingURL=328.46dd4715.chunk.js.map
