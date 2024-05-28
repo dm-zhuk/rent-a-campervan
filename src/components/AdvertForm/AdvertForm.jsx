@@ -3,19 +3,12 @@ import React, { useEffect, useState, memo } from 'react';
 import Card from '../../helpers/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAll } from '../../redux/advert/operations';
-import {
-  selectAdvert,
-  selectLoader,
-  selectError,
-} from '../../redux/advert/selectors';
-import Loader from 'components/Loader/Loader';
+import { selectAdvert } from '../../redux/advert/selectors';
 import styles from './index.module.scss';
 
 const AdvertForm = () => {
   const dispatch = useDispatch();
   const items = useSelector(selectAdvert);
-  const isLoading = useSelector(selectLoader);
-  const error = useSelector(selectError);
   const perPage = 4;
   const [page, setPage] = useState(1);
 
@@ -39,8 +32,6 @@ const AdvertForm = () => {
 
   return (
     <>
-      {isLoading && <Loader />}
-      {error && <b>Error: {error}</b>}
       <section className={styles.cardsContainer}>
         {renderedCards &&
           renderedCards.map(card => (
