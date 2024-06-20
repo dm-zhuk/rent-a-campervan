@@ -3,7 +3,6 @@ import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Loader from 'components//Loader/Loader';
 import SharedLayout from '../../layouts//SharedLayout';
-import NotFoundPage from '../../pages/NotFoundPage';
 
 const App = () => {
   const HomePage = lazy(() => import('pages/HomePage'));
@@ -17,7 +16,7 @@ const App = () => {
           <Route index element={<HomePage />} />
           <Route path="catalog" element={<CatalogPage />} />
           <Route path="favorites" element={<FavoritesPage />} />
-          <Route path="*" element={<NotFoundPage />} />
+          <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>
     </Suspense>

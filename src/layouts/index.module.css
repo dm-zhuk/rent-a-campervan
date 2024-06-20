@@ -2,11 +2,10 @@
   position: fixed;
   z-index: 2;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   top: 0;
   left: 0;
-  width: 1400px;
+  width: 90vw;
   height: 56px;
   padding-left: 42px;
   background-color: #f7f7f7;
@@ -16,8 +15,9 @@
 
 .headerContainer {
   display: flex;
+  justify-content: center;
   align-items: center;
-  max-width: calc(100% - 32px);
+  width: calc(100% - 32px);
 }
 
 .headerNav {
@@ -27,6 +27,7 @@
 
 .headerNavList {
   display: flex;
+  margin-left: 6vw;
   gap: 40px;
 }
 
@@ -82,7 +83,6 @@
 .headerContactsList {
   display: flex;
   gap: 16px;
-  padding: 16px 0 16px 520px;
 }
 
 .headerContactsLink {

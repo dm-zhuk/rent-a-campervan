@@ -11,17 +11,16 @@
 body {
   max-width: 1440px;
   height: auto;
-  background: #FFF;
   margin: 0;
-  color: #101828;
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
   line-height: 1.5em;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  background: #FFF;
+  color: #101828;
 }
 
 *,
@@ -37,8 +36,30 @@ h4,
 h5,
 h6,
 p,
-ul {
+ul,
+li,
+a {
   margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .list {
@@ -54,7 +75,6 @@ a {
   color: currentColor;
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 img {
@@ -78,6 +98,15 @@ img {
 
 input {
   font-family: inherit;
+}
+
+.react-datepicker__input-container input {
+  width: 400px;
+}
+
+.Toastify {
+  position: fixed;
+  z-index: 9;
 }
 
 code {
