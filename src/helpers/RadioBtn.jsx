@@ -3,7 +3,7 @@ import {
   FiltersContainer,
   FiltersTypeInput,
   CheckRadioLabel,
-} from '../components/AdvertFilter/index';
+} from '../components/AdvertFilter/temp-index';
 
 const RadioBtn = ({ svg, label, value }) => {
   return (
