@@ -75,9 +75,19 @@
   margin-bottom: 24px;
 }
 
-.symbol {
+.symbol18 {
   width: 18px;
   height: 20px;
+}
+
+.symbol32 {
+  width: 32px;
+  height: 32px;
+}
+
+.symbol40 {
+  width: 40px;
+  height: 28px;
 }
 
 .wrapper {
@@ -93,6 +103,26 @@
 }
 
 /* Filters */
+.filterSection {
+  @extend .label;
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2em;
+    margin: 0;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    gap: 10px;
+  }
+}
+
 .checkBoxContainer {
   display: inline-flex;
   flex-direction: column;
@@ -150,7 +180,7 @@
   margin: -1px;
 
   &:checked ~ .checkRadioLabel {
-    border: 1px solid #e44848;
+    border-color: #e44848;
   }
 }
 
@@ -159,6 +189,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 
 .contentImg {

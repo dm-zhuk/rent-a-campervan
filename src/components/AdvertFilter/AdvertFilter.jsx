@@ -1,27 +1,28 @@
-import React, { useContext, useState } from 'react';
+// import { filteredAdverts } from 'redux/advert/advertSlice';
+import React, { useContext } from 'react';
 import styles from './index.module.scss';
-import sprite from '../../img/sprite.svg';
-import { filteredAdverts } from 'redux/advert/advertSlice';
 import toast from 'react-hot-toast';
-/* 
-import vector_line from 'img/vLine.svg';
-import ac from 'img/ac.svg';
-import automatic from 'img/transmission.svg';
-import kitchen from 'img/kitchen.svg';
-import tv from 'img/tv.svg';
-import shower from 'img/shower.svg';
-import van from 'img/van.svg';
-import van_fully_intg from 'img/fullyIntegrated.svg';
-import van_alcove from 'img/alcove.svg'; */
+import Button from 'components/UI/Button';
+import sprite from '../../img/sprite.svg';
+import { PaginationContext } from '../../helpers/PaginationContext';
+import {
+  CheckboxList,
+  RadioButtonsList,
+  EquipmentCheckBox,
+  VecTypeRadioBtn,
+  getFilterParams,
+  filterData,
+} from 'components/UI/Filters';
 
 const AdvertFilter = ({ adverts, setFilteredAdverts }) => {
-  const { resetPage } = useContext(Pagination);
+  // const { resetPage } = useContext(PaginationContext);
 
   const handleSubmit = e => {
     e.preventDefault();
-    const FilterParams = getFilterParams(e.target);
+    const filterParams = getFilterParams(e.target);
     let filteredData = filterData(adverts, filterParams);
-    resetPage();
+    // resetPage();
+
     setFilteredAdverts(filteredData);
     toast.success('Your filter applied');
     resetFilterParams(e.target);
@@ -29,132 +30,55 @@ const AdvertFilter = ({ adverts, setFilteredAdverts }) => {
   const resetFilterParams = form => {
     form.reset();
   };
+
   return (
     <>
-      <div className={styles.inputForm}>
+      <form className={styles.inputForm} onSubmit={handleSubmit}>
         <div className={styles.textInputContainer}>
-          <label className={styles.label} htmlFor="city">
+          <label className={styles.label} htmlFor="location">
             Location
           </label>
-          <div className={styles.textField}>
-            <symbol viewBox={sprite.viewBox} className={styles.symbol}>
-              {sprite.icons.location}
-            </symbol>
-            <input
-              className={styles.input}
-              type="text"
-              id="city"
-              value={city}
-              onChange={handleCityChange}
-              placeholder="City"
-            />
-          </div>
+          <input
+            className={styles.input}
+            type="text"
+            id="location"
+            placeholder="City"
+          />
+          <svg className={styles.symbol18}>
+            <use xlinkHref={`${sprite}#location`}></use>
+          </svg>
         </div>
-        <label className={styles.label} htmlFor="details">
-          Filters
-        </label>
-      </div>
-      <div className={styles.checkBoxContainer}>
-        <h2 className={styles.h2}>Vehicle equipment</h2>
-        <symbol
-          viewBox={sprite.viewBox}
-          className={styles.vectorLine}
-          src={''}
-          alt="line"
-        />
-        <div className={styles.checkRadioInput}>
-          <div className={styles.filtersContainer}>
-            <input className={styles.filtersTypeInput} onClick={handleClick}>
-              <label className={styles.contentBox}>
-                <symbol
-                  viewBox={sprite.viewBox}
-                  className={styles.contentImg}
-                  src={''}
-                  alt="AC"
+        <div className={styles.filterSection}>
+          <label className={styles.label} htmlFor="details">
+            Filters
+          </label>
+          <div className={styles.checkBoxContainer}>
+            <h2 className={styles.h2}>Vehicle equipment</h2>
+            <div className={styles.list}>
+              {EquipmentCheckBox.map(({ name, label, icon }) => (
+                <CheckboxList
+                  key={label}
+                  name={name}
+                  label={label} // see if omit
+                  icon={icon}
                 />
-                <p className={styles.bodyText}>AC</p>
-              </label>
-            </input>
-            <input className={styles.filtersTypeInput} onClick={handleClick}>
-              <label className={styles.contentBox}>
-                <symbol viewBox={sprite.viewBox} className={styles.symbol}>
-                  {sprite.icons.location}
-                </symbol>
-                <p className={styles.bodyText}>Automatic</p>
-              </label>
-            </input>
-            <input className={styles.filtersTypeInput} onClick={handleClick}>
-              <label className={styles.contentBox}>
-                <symbol viewBox={sprite.viewBox} className={styles.symbol}>
-                  {sprite.icons.location}
-                </symbol>
-                <p className={styles.bodyText}>Kitchen</p>
-              </label>
-            </input>
-          </div>
-          <div className={styles.filtersContainer}>
-            <input className={styles.filtersTypeInput} onClick={handleClick}>
-              <label className={styles.contentBox}>
-                <symbol viewBox={sprite.viewBox} className={styles.symbol}>
-                  {sprite.icons.location}
-                </symbol>
-                <p className={styles.bodyText}>TV</p>
-              </label>
-            </input>
-            <input className={styles.filtersTypeInput} onClick={handleClick}>
-              <label className={styles.contentBox}>
-                <symbol viewBox={sprite.viewBox} className={styles.symbol}>
-                  {sprite.icons.location}
-                </symbol>
-                <p className={styles.bodyText}>Shower/WC</p>
-              </label>
-            </input>
+              ))}
+            </div>
+            <h2 className={styles.h2}>Vehicle Type</h2>
+            <div className={styles.list}>
+              {VecTypeRadioBtn.map(({ value, label, icon }) => (
+                <RadioButtonsList
+                  key={label}
+                  value={value}
+                  label={label} // see if omit
+                  icon={icon}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.checkBoxContainer}>
-        <h2 className={styles.h2}>Vehicle type</h2>
-        <symbol
-          viewBox={sprite.viewBox}
-          className={styles.vectorLine}
-          src={''}
-          alt="line"
-        />
-        <div className={styles.checkRadioInput}>
-          <div className={styles.filtersContainer}>
-            <input className={styles.filtersTypeInput} onClick={handleClick}>
-              <label className={styles.contentBox}>
-                <symbol viewBox={sprite.viewBox} className={styles.symbol}>
-                  {sprite.icons.location}
-                </symbol>
-                <p className={styles.bodyText}>Van</p>
-              </label>
-            </input>
-            <input className={styles.filtersTypeInput} onClick={handleClick}>
-              <label className={styles.contentBox}>
-                <symbol viewBox={sprite.viewBox} className={styles.symbol}>
-                  {sprite.icons.location}
-                </symbol>
-                <p className={styles.bodyText}>Fully Integrated</p>
-              </label>
-            </input>
-            <input className={styles.filtersTypeInput} onClick={handleClick}>
-              <label className={styles.contentBox}>
-                <symbol viewBox={sprite.viewBox} className={styles.symbol}>
-                  {sprite.icons.location}
-                </symbol>
-                <p className={styles.bodyText}>Alcove</p>
-              </label>
-            </input>
-          </div>
-        </div>
-        <button
-          className={styles.button}
-          type="button"
-          text="Search"
-          onClick={handleSearch}
-        ></button>
-      </div>
+        <Button type="submit" text="Search" />
+      </form>
     </>
   );
 };

@@ -14,24 +14,6 @@ handleChange = evt => {
       `checked: ${filtered}`
     );
 
-const CheckBox = ({ name, svg, label }) => {
-  return (
-    <div className={styles.checkRadioInput}>
-      <div className={styles.filtersContainer}>
-        <input
-          className={styles.filtersTypeInput}
-          type="checkbox"
-          checked={filtered}
-          onChange={this.handleChange}
-          id={name}
-        />
-      </div>
-    </div>
-  );
-};
-
-export default CheckBox;
-
 
   return (
     <div className={styles.inputBar}>
