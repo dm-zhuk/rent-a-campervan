@@ -4,16 +4,13 @@ import React from 'react';
 import styles from '../AdvertForm/index.module.scss';
 
 import star from 'img/star.svg';
-import map_pin from 'img/map_pin.svg';
-import adults from 'img/adults.svg';
+import map_pin from 'img/location.svg';
 import automatic from 'img/automatic.svg';
 import petrol from 'img/petrol.svg';
 import kitchen from 'img/kitchen.svg';
 import beds from 'img/beds.svg';
 import ac from 'img/ac.svg';
 import close from 'img/close.svg';
-import vector_line1 from 'img/vector_line1.svg';
-import vector_line2 from 'img/vector_line2.svg';
 import airConditioner from 'img/airConditioner.svg';
 import radio from 'img/radio.svg';
 import cd from 'img/cd.svg';
@@ -80,18 +77,13 @@ const CardModalData = modal => {
                 <p className={styles.featureReviewTitle}>Features</p>
                 <p className={styles.featureReviewTitle}>Reviews</p>
               </div>
-              <svg
-                className={styles.vectorLine1}
-                src={vector_line1}
-                alt="line"
-              />
             </div>
             <div className={styles.featureReviewHorizBox}>
               <div className={styles.featureTagsBox}>
                 <button type="button" className={styles.categoryButton}>
                   <svg
                     className={styles.iconThumb20}
-                    src={adults}
+                    src={''}
                     alt="adults capacity"
                   />
                   <p className={styles.categoryText}>{modal.adults} adults</p>
@@ -166,11 +158,6 @@ const CardModalData = modal => {
               <div className={styles.txtFieldBox}>
                 <div className={styles.txtField}>
                   <h2 className={styles.h2}>Vehicle details</h2>
-                  <svg
-                    className={styles.vectorLine2}
-                    src={vector_line2}
-                    alt="line"
-                  />
                   <div className={styles.vehicleDetailItem}>
                     <p className={styles.vehicleItemTxt}>Form</p>
                     <p className={styles.vehicleItemTxt}>{modal.form}</p>

@@ -6,17 +6,74 @@
 }
 
 /* Location */
-.input {
-  padding: 10px;
-  background: #f7f7f7;
-  border: none;
-  font-weight: 400;
-  line-height: 1.25em;
+
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 360px;
+}
+
+.textInputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.label {
+  align-self: stretch;
   color: rgba(16, 24, 40, 0.6);
-  transform: translateY(-50%);
-  left: 1rem;
-  z-index: 1;
-  margin-right: 24px;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5em;
+}
+
+.inputBar {
+  position: relative;
+  width: 100%;
+  padding: 18px 0;
+  border: none;
+  border-radius: 10px;
+  background: #f7f7f7;
+}
+
+.symbol18 {
+  position: absolute;
+  left: 18px;
+  width: 18px;
+  height: 20px;
+}
+
+input[type='search'] {
+  display: flex;
+  padding: 0 18px 0 44px;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  width: 100%;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1em;
+  width: 1em;
+  border-radius: 50em;
+  background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg)
+    no-repeat 50% 50%;
+  background-size: contain;
+  opacity: 0;
+  pointer-events: none;
+}
+
+input[type='search']:focus::-webkit-search-cancel-button {
+  opacity: 0.3;
+  pointer-events: all;
 }
 
 .h2 {
@@ -48,33 +105,6 @@
   }
 }
 
-.inputForm {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-
-.label {
-  margin: 0 10px;
-  align-self: stretch;
-  color: rgba(16, 24, 40, 0.6);
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.5em;
-}
-
-.textField {
-  display: flex;
-  padding: 4px 118px 4px 18px;
-  align-items: center;
-  border-radius: 10px;
-  background: #f7f7f7;
-  margin-bottom: 24px;
-}
-
 .symbol18 {
   width: 18px;
   height: 20px;
@@ -93,13 +123,6 @@
 .wrapper {
   position: relative;
   display: flex;
-}
-
-.textInputContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
 }
 
 /* Filters */

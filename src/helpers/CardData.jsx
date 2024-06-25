@@ -3,8 +3,6 @@ import ShowMoreModal from './ShowMore';
 import styles from '../components/AdvertForm/index.module.scss';
 
 import star from 'img/star.svg';
-import map_pin from 'img/map_pin.svg';
-import adults from 'img/adults.svg';
 import automatic from 'img/automatic.svg';
 import petrol from 'img/petrol.svg';
 import kitchen from 'img/kitchen.svg';
@@ -30,7 +28,7 @@ const CardData = advItem => {
             </p>
           </div>
           <div className={styles.iconTextWrapper}>
-            <svg src={map_pin} alt="pin" />
+            <svg src={''} alt="pin" />
             <p className={styles.bodyText}>{advItem.location}</p>
           </div>
         </div>
@@ -38,8 +36,8 @@ const CardData = advItem => {
       <p className={styles.cardAdvert}>{advItem.description}</p>
       <div className={styles.segmentedPicker}>
         <button type="button" className={styles.categoryButton}>
-          <svg className={styles.iconThumb20} src={adults} alt="capacity" />
-          <p className={styles.categoryText}>{advItem.adults} adults</p>
+          <svg className={styles.iconThumb20} src={''} alt="capacity" />
+          <p className={styles.categoryText}>{''} adults</p>
         </button>
         <button type="button" className={styles.categoryButton}>
           <svg
