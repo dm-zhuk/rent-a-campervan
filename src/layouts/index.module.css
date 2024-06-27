@@ -5,7 +5,7 @@
   align-items: center;
   top: 0;
   left: 0;
-  width: 90vw;
+  width: 100vw;
   height: 56px;
   padding-left: 42px;
   background-color: #f7f7f7;
@@ -28,6 +28,7 @@
 .headerNavList {
   display: flex;
   margin-left: 6vw;
+  margin-right: 3vw;
   gap: 40px;
 }
 
@@ -45,11 +46,6 @@
   text-transform: uppercase;
   padding-top: 24px;
   padding-bottom: 24px;
-
-}
-
-:hover {
-  .headerLogo::active {}
 }
 
 .headerLogoAccent {
@@ -67,28 +63,40 @@
   border: none;
   background-color: transparent;
   padding: 0;
-  transition: background-color250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  :hover {
-    background-color: #d84343;
-  }
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.sharedPageCtnr,
-.headerContacts {
+.headerBtn:hover {
+  background-color: #d84343;
+}
+
+.sharedPageCtnr {
   display: flex;
   align-items: center;
 }
 
-.headerContactsList {
-  display: flex;
-  gap: 16px;
+@media (max-width: 767px) {
+  .headerContacts {
+    display: none;
+  }
 }
 
-.headerContactsLink {
-  display: block;
-  padding: 0;
-  font-size: 12px;
+@media (min-width: 768px) {
+  .headerContacts {
+    display: flex;
+    align-items: center;
+  }
+
+  .headerContactsList {
+    display: flex;
+    gap: 16px;
+  }
+
+  .headerContactsLink {
+    display: block;
+    padding: 0;
+    font-size: 12px;
+  }
 }
 
 .headerNavItemLink {

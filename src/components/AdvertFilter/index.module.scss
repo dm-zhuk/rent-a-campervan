@@ -24,7 +24,6 @@
 }
 
 .label {
-  align-self: stretch;
   color: rgba(16, 24, 40, 0.6);
   font-family: Inter;
   font-size: 16px;
@@ -51,18 +50,16 @@
 
 input[type='search'] {
   display: flex;
-  padding: 0 18px 0 44px;
+  padding: 0 36px 0 44px;
   background-color: transparent;
   border: none;
-  color: inherit;
-  font-size: inherit;
   width: 100%;
 }
 
 input[type='search']::-webkit-search-cancel-button {
   -webkit-appearance: none;
-  height: 1em;
-  width: 1em;
+  height: 1.2em;
+  width: 1.2em;
   border-radius: 50em;
   background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg)
     no-repeat 50% 50%;
@@ -95,7 +92,7 @@ input[type='search']:focus::-webkit-search-cancel-button {
   border: none;
   border-radius: 200px;
   color: white;
-  margin-top: 48px;
+  margin-top: 32px;
   background: #e44848;
   cursor: pointer;
 
@@ -127,34 +124,32 @@ input[type='search']:focus::-webkit-search-cancel-button {
 
 /* Filters */
 .filterSection {
-  @extend .label;
+  p {
+    @extend .label;
+    margin-bottom: 14px;
+  }
   h2 {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 1.2em;
+    @extend .h2;
     margin: 0;
-    padding-bottom: 32px;
+    padding-bottom: 24px;
+    width: 100%;
     border-bottom: 1px solid rgba(16, 24, 40, 0.1);
+    -ms-flex-align: stretch;
   }
 
-  .list {
+  .btnsWrapper {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 24px;
-    margin-bottom: 32px;
+    justify-content: flex-start;
+    padding: 24px 0 32px;
+    width: 100%;
     gap: 10px;
   }
 }
 
 .checkBoxContainer {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
-}
-
-.vectorLine {
-  width: 302px;
 }
 
 .checkRadioInput {
@@ -172,10 +167,14 @@ input[type='search']:focus::-webkit-search-cancel-button {
   gap: 10px;
 }
 
-.checkRadioLabel {
+.checkLabel {
   display: flex;
+  flex-direction: column;
+  text-align: center;
   height: 95px;
-  width: 95px;
+  width: 112px;
+  padding: 12px;
+  gap: 8px;
   font-weight: 500;
   align-items: center;
   justify-content: center;
@@ -191,7 +190,7 @@ input[type='search']:focus::-webkit-search-cancel-button {
   }
 }
 
-.filtersTypeInput {
+.inputHidden {
   position: absolute;
   overflow: hidden;
   white-space: nowrap;
@@ -202,7 +201,7 @@ input[type='search']:focus::-webkit-search-cancel-button {
   height: 1px;
   margin: -1px;
 
-  &:checked ~ .checkRadioLabel {
+  &:checked ~ .checkLabel {
     border-color: #e44848;
   }
 }
@@ -213,11 +212,6 @@ input[type='search']:focus::-webkit-search-cancel-button {
   justify-content: center;
   align-items: center;
   gap: 8px;
-}
-
-.contentImg {
-  width: 32px;
-  height: 32px;
 }
 
 .bodyText {

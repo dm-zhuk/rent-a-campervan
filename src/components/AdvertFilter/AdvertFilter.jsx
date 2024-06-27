@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import styles from './index.module.scss';
+import location from 'img/location.svg';
 import toast from 'react-hot-toast';
 import Button from 'components/UI/Button';
-import sprite from '../../img/sprite.svg';
 import { PaginationContext } from '../../service/PaginationContext';
 import {
   CheckboxList,
   RadioButtonsList,
-  equipmentCheckBox,
-  vecTypeRadioBtn,
+  EquipmentCheckBox,
+  VecTypeRadioBtn,
   getFilterParams,
   filterData,
 } from 'components/UI/Filters';
@@ -38,9 +38,7 @@ const AdvertFilter = ({ adverts, setFilteredAdverts }) => {
             Location
           </label>
           <div className={styles.inputBar}>
-            <svg className={styles.symbol18}>
-              <use xlinkHref={`${sprite}#location`}></use>
-            </svg>
+            <img src={location} alt="location" className={styles.symbol18} />
             <input
               type="search"
               id="location"
@@ -50,32 +48,30 @@ const AdvertFilter = ({ adverts, setFilteredAdverts }) => {
           </div>
         </div>
         <div className={styles.filterSection}>
-          <label className={styles.label} htmlFor="details">
-            Filters
-          </label>
+          <p>Filters</p>
           <div className={styles.checkBoxContainer}>
             <h2 className={styles.h2}>Vehicle equipment</h2>
-            {/* <div className={styles.list}>
-              {equipmentCheckBox.map(({ name, label, icon }) => (
-                <CheckboxList
-                  key={label}
-                  name={name}
-                  label={label} // see if omit
-                  icon={icon}
+            <div className={styles.btnsWrapper}>
+              {CheckboxList.map(item => (
+                <EquipmentCheckBox
+                  key={item.name}
+                  name={item.name}
+                  label={item.label}
+                  icon={item.icon}
                 />
               ))}
-            </div> */}
+            </div>
             <h2 className={styles.h2}>Vehicle Type</h2>
-            {/*  <div className={styles.list}>
-              {vecTypeRadioBtn.map(({ value, label, icon }) => (
-                <RadioButtonsList
+            <div className={styles.btnsWrapper}>
+              {RadioButtonsList.map(({ value, label, icon }) => (
+                <VecTypeRadioBtn
                   key={label}
                   value={value}
-                  label={label} // see if omit
+                  label={label}
                   icon={icon}
                 />
               ))}
-            </div> */}
+            </div>
           </div>
         </div>
         <Button type="submit" text="Search" />

@@ -5,16 +5,17 @@ export const HomeContainer = styled.section`
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 72px;
+  width: 100vw;
+  margin-top: 74px;
   gap: 12px;
 `;
 
 export const ImgThumb = styled.img`
-  width: 90%;
-  height: auto;
+  width: 100vw;
+  height: 35vw;
   flex-shrink: 0;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 4px;
   background: lightgray -57px -4.651px / 195.679% 103.001% no-repeat;
 `;
 

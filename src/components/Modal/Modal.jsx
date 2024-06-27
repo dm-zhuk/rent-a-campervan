@@ -97,7 +97,7 @@ const CardModalData = modal => {
                   <p className={styles.categoryText}>{modal.transmission}</p>
                 </button>
                 <button type="button" className={styles.categoryButton}>
-                  <svg className={styles.iconThumb20} src={ac} alt="AC" />
+                  <img className={styles.iconThumb20} src={ac} alt="AC" />
                   <p className={styles.categoryText}>
                     {modal.details.airConditioner} AC
                   </p>
@@ -141,17 +141,17 @@ const CardModalData = modal => {
                   </p>
                 </button>
                 <button type="button" className={styles.categoryButton}>
-                  <svg className={styles.iconThumb20} src={cd} alt="CD" />
+                  <img className={styles.iconThumb20} src={cd} alt="CD" />
                   <p className={styles.categoryText}>{modal.details.cd} CD</p>
                 </button>
                 <button type="button" className={styles.categoryButton}>
-                  <svg className={styles.iconThumb20} src={radio} alt="radio" />
+                  <img className={styles.iconThumb20} src={radio} alt="radio" />
                   <p className={styles.categoryText}>
                     {modal.details.radio} Radio
                   </p>
                 </button>
                 <button type="button" className={styles.categoryButton}>
-                  <svg className={styles.iconThumb20} src={hob} alt="hob" />
+                  <img className={styles.iconThumb20} src={hob} alt="hob" />
                   <p className={styles.categoryText}>{modal.details.hob} hob</p>
                 </button>
               </div>
@@ -224,7 +224,7 @@ const CardModalData = modal => {
                   <BookingItemRel>
                     <BasicDatePicker></BasicDatePicker>
                     <DatePicker>
-                      <svg className={styles.iconThumb20} src={calendar} alt="calendar" />
+                      <img className={styles.iconThumb20} src={calendar} alt="calendar" />
                     </DatePicker>
                   </BookingItemRel> */}
                   <div className={styles.bookingItemRel}>

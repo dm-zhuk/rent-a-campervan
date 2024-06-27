@@ -9,7 +9,9 @@ const CatalogPage = () => {
       <section className={styles.leftSection}>
         <AdvertFilter />
       </section>
-      <section className={styles.rightSection}>{/* <AdvertForm /> */}</section>
+      <section className={styles.rightSection}>
+        <AdvertForm />
+      </section>
     </div>
   );
 };

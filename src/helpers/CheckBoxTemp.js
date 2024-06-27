@@ -31,7 +31,7 @@ handleChange = evt => {
         tabIndex="0"
         ref={labelRef}
       >
-        <svg className={styles.symbol}>
+        <img className={styles.symbol}>
           <use xlinkHref={`${sprite}#${iconName}`}></use>
         </svg>
         {label}
@@ -40,7 +40,7 @@ handleChange = evt => {
   );
 
         /* 
-        <label className={styles.checkRadioLabel} htmlFor={name}>
+        <label className={styles.checkLabel} htmlFor={name}>
           {svg}
           {label}
         </label>
