@@ -1,5 +1,4 @@
 import React, { useEffect, useState, memo } from 'react';
-// import CardData from '../../helpers/CardData';
 import Card from '../../helpers/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAll } from '../../redux/advert/operations';
