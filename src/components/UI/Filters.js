@@ -1,40 +1,40 @@
 import styles from 'components/AdvertFilter/index.module.scss';
-import ac from 'img/ac.svg';
-import automatic from 'img/automatic.svg';
-import kitchen from 'img/kitchen.svg';
-import tv from 'img/tv.svg';
-import shower from 'img/shower.svg';
-import van from 'img/van.svg';
-import van_fully_intg from 'img/van_fully_intg.svg';
-import van_alcove from 'img/van_alcove.svg';
+import {
+  AC,
+  Transmission,
+  Kitchen,
+  TV,
+  Shower,
+  Van,
+  VanFullyIntg,
+  VanAlcove,
+} from 'components/Icons';
 
 const CheckboxList = [
   {
     name: 'AC',
     label: 'AC',
-    icon: <img src={ac} alt="AC" className={styles.symbol32} />,
+    icon: <AC />,
   },
   {
     name: 'transmission',
     label: 'Automatic',
-    icon: (
-      <img src={automatic} alt="transmission" className={styles.symbol32} />
-    ),
+    icon: <Transmission />,
   },
   {
     name: 'kitchen',
     label: 'Kitchen',
-    icon: <img src={kitchen} alt="kitchen" className={styles.symbol32} />,
+    icon: <Kitchen />,
   },
   {
     name: 'TV',
     label: 'TV',
-    icon: <img src={tv} alt="TV" className={styles.symbol32} />,
+    icon: <TV />,
   },
   {
     name: 'shower',
     label: 'Shower/WC',
-    icon: <img src={shower} alt="shower/wc" className={styles.symbol32} />,
+    icon: <Shower />,
   },
 ];
 
@@ -42,23 +42,17 @@ const RadioButtonsList = [
   {
     label: 'Van',
     value: 'panelTruck',
-    icon: <img src={van} alt="Van" className={styles.symbol32} />,
+    icon: <Van />,
   },
   {
     label: 'Fully Integrated',
     value: 'fullyIntegrated',
-    icon: (
-      <img
-        src={van_fully_intg}
-        alt="Fully Integrated"
-        className={styles.symbol32}
-      />
-    ),
+    icon: <VanFullyIntg />,
   },
   {
     label: 'Alcove',
     value: 'alcove',
-    icon: <img src={van_alcove} alt="Alcove" className={styles.symbol32} />,
+    icon: <VanAlcove />,
   },
 ];
 

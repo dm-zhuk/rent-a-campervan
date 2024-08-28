@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ModalWindow from './ModalWindow';
-import CardData from './CardData';
+import CardData from './CardDataOld';
 import CardModalData from 'components/Modal/Modal';
 
 import styles from 'components/AdvertForm/index.module.scss';

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styles from './index.module.scss';
-import location from 'img/location.svg';
+import Location from 'components/Icons';
 import toast from 'react-hot-toast';
 import Button from 'components/UI/Button';
 import { PaginationContext } from '../../service/PaginationContext';
@@ -38,7 +38,7 @@ const AdvertFilter = ({ adverts, setFilteredAdverts }) => {
             Location
           </label>
           <div className={styles.inputBar}>
-            <img src={location} alt="location" className={styles.symbol18} />
+            <Location />
             <input
               type="search"
               id="location"
