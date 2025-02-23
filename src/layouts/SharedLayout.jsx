@@ -53,8 +53,8 @@ const SharedLayout = () => {
               </li>
             </ul>
           </div>
-
-          <div className={styles.headerContacts}>
+        </div>
+                  <div className={styles.headerContacts}>
             <ul className={styles.headerContactsList}>
               <li>
                 <a
@@ -74,7 +74,6 @@ const SharedLayout = () => {
               </li>
             </ul>
           </div>
-        </div>
       </div>
 
       <div className={styles.sharedPageCtnr}>
